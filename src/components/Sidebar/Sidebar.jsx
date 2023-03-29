@@ -12,25 +12,24 @@ const Sidebar = () => {
       <div className="center">
         <ul>
           <li>
-            <GridViewOutlinedIcon />
+            <GridViewOutlinedIcon className="icon" />
             <span>Dashboard</span>
           </li>
           <li>
-            <TableChartOutlinedIcon />
+            <TableChartOutlinedIcon className="icon" />
             <span>Board</span>
           </li>
           <li>
-            <DonutSmallOutlinedIcon />
+            <DonutSmallOutlinedIcon className="icon" />
             <span>Analytics</span>
           </li>
           <li>
-            <SettingsOutlinedIcon />
+            <SettingsOutlinedIcon className="icon" />
             <span>Settings</span>
           </li>
         </ul>
       </div>
       <div className="bottom">
-        <GridViewOutlinedIcon />
         <span>Log out</span>
       </div>
     </div>
