@@ -3,16 +3,41 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
-  padding: 25px;
+  margin-bottom: 40px;
 
   .left {
     display: flex;
     align-items: center;
+    width: 50%;
+    .icon {
+      color: #707070;
+      font-size: 20px;
+    }
+
+    input{
+      border: none;
+      outline-color: transparent;
+      margin-left: 10px;
+      font-size: 13px;
+      width: 100%;
+
+      &::placeholder{
+        color: #707070;
+      }
+    }
   }
   .right {
     display: flex;
     align-items: center;
+    list-style: none;
+
+
+    li {
+      margin-left: 30px;
+      .icon {
+        font-size: 20px;
+      }
+    }
 
     img {
       border-radius: 50%;

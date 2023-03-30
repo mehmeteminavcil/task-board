@@ -1,7 +1,35 @@
-.home{
-    display: flex;
+.home {
+  display: flex;
 
-    .homeContainer{
-        flex: 6;
+  .homeContainer {
+    flex: 6;
+    padding: 25px;
+
+    .homeHeader {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      .title {
+        font-size: 24px;
+        color: #000;
+        font-weight: 500;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+      }
     }
+
+    .homeMain {
+      margin-top: 30px;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  }
 }
