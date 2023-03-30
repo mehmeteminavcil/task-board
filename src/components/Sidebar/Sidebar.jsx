@@ -3,6 +3,7 @@ import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import TableChartOutlinedIcon from "@mui/icons-material/TableChartOutlined";
 import DonutSmallOutlinedIcon from "@mui/icons-material/DonutSmallOutlined";
+import LogoutIcon from "@mui/icons-material/Logout";
 const Sidebar = () => {
   return (
     <div className="sidebar">
@@ -30,6 +31,7 @@ const Sidebar = () => {
         </ul>
       </div>
       <div className="bottom">
+        <LogoutIcon className="icon" />
         <span>Log out</span>
       </div>
     </div>

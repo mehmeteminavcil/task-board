@@ -41,6 +41,21 @@
 
     .bottom {
         margin-top: auto;
+        margin-bottom: 70px;
+        display: flex;
+        align-items: center;
+
+        .icon{
+            font-size: 20px;
+            color: #000000d5
+        }
+
+        span{
+            margin-left: 15px;
+            font-weight: 500;
+            font-size: 13px;
+            color: #000;
+        }
        }
 
 }
