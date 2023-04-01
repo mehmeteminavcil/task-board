@@ -1,61 +1,61 @@
-.sidebar{
+.sidebar {
+  flex: 1;
+
+  box-shadow: 5.64649px -0.806641px 9.67969px rgba(0, 0, 0, 0.11);
+  padding: 0 30px;
+
+  .sidebarContainer {
+    position: fixed;
+       height: 100vh;
     display: flex;
     flex-direction: column;
-    flex: 1;
-    height: 100vh;
-    box-shadow: 5.64649px -0.806641px 9.67969px rgba(0, 0, 0, 0.11);
-    padding: 0 30px;
-.top{
-
-    margin-top: 25px;
-    margin-bottom: 45px;
-    .logo{
+    .top {
+      margin-top: 25px;
+      margin-bottom: 45px;
+      .logo {
         font-size: 13px;
         font-weight: 700;
-        
+      }
     }
-}
-    .center{
+    .center {
+      ul {
+        list-style: none;
+        li {
+          margin-bottom: 30px;
+          display: flex;
+          align-items: center;
 
-        ul{
-            list-style: none;
-            li{
-                margin-bottom: 30px;
-                display: flex;
-                align-items: center;
-
-                .icon{
-                    margin-right: 13px;
-                    color: #707070;
-                    font-size: 23px;
-                }
-                span {
-                    font-size: 13px;
-                    font-weight: 500;
-                    color: #707070;
-
-                }
-            }
+          .icon {
+            margin-right: 13px;
+            color: #707070;
+            font-size: 23px;
+          }
+          span {
+            font-size: 13px;
+            font-weight: 500;
+            color: #707070;
+          }
         }
+      }
     }
 
     .bottom {
-        margin-top: auto;
-        margin-bottom: 70px;
-        display: flex;
-        align-items: center;
+      margin-top: auto;
+      margin-bottom: 70px;
+      display: flex;
+      align-items: center;
 
-        .icon{
-            font-size: 20px;
-            color: #000000d5
-        }
+      .icon {
+        font-size: 20px;
+        color: #000000d5;
+      }
 
-        span{
-            margin-left: 15px;
-            font-weight: 500;
-            font-size: 13px;
-            color: #000;
-        }
-       }
-
+      span {
+        margin-left: 15px;
+        font-weight: 500;
+        font-size: 13px;
+        color: #000;
+      }
+    }
+  }
 }

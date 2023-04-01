@@ -1,23 +1,19 @@
 import "./section.scss";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import MoreHorizRoundedIcon from "@mui/icons-material/MoreHorizRounded";
-import Todo from "../Todo/Todo";
-const Section = ({ children }) => {
+const Section = ({ title, children, handleClick }) => {
   return (
     <div className="section">
       <div className="top">
-        <h3 className="title">To do</h3>
+        <h3 className="title">{title}</h3>
 
         <div className="right">
-          <AddRoundedIcon className="icon" />
+          <AddRoundedIcon className="icon" onClick={handleClick} />
           <MoreHorizRoundedIcon className="icon" />
         </div>
       </div>
 
-      <div className="bottom">
-        <Todo />
-        <Todo />
-      </div>
+      <div className="bottom">{children}</div>
     </div>
   );
 };
