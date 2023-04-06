@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar/Navbar";
 import Section from "../../components/Section/Section";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import Todo from "../../components/Todo/Todo";
+import Task from "../../components/Task/Task";
 
 import "./home.scss";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
@@ -34,7 +34,7 @@ const Home = () => {
               children={tasks.map((task) => {
                 if (board.status === task.status) {
                   return (
-                    <Todo
+                    <Task
                       key={task.id}
                       category={task.category}
                       title={task.title}

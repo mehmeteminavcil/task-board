@@ -1,0 +1,30 @@
+.taskMenu{
+    background-color: rgba(238, 242, 245, 0.648);
+    position: absolute;
+    top: 45px;
+    right: 15px;
+    border-radius: 8px;
+    padding: 10px 8px 5px 8px;
+    backdrop-filter: blur(2px);
+
+    ul{
+        list-style: none;
+
+        li{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 6px;
+
+            span{
+                font-size: 13px;
+
+            }
+            
+            .icon{
+                font-size: 15px;
+                margin-right: 5px;
+            }
+        }
+    }
+}
