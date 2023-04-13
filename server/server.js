@@ -2,6 +2,7 @@ import express from "express";
 import connectDB from "./db.js";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js";
+import taskRoutes from "./routes/task.js";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -19,6 +20,7 @@ connectDB();
 app.use(express.json());
 
 // Routes
+app.use("/tasks", taskRoutes);
 app.use("/api/auth", authRoutes);
 
 // Error handling middleware
