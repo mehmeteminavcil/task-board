@@ -1,4 +1,5 @@
 import express from "express";
+import helmet from "helmet";
 import connectDB from "./db.js";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js";
@@ -18,9 +19,10 @@ connectDB();
 
 // Middleware
 app.use(express.json());
+app.use(helmet());
 
 // Routes
-app.use("/tasks", taskRoutes);
+app.use("/", taskRoutes);
 app.use("/api/auth", authRoutes);
 
 // Error handling middleware

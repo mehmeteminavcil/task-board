@@ -3,8 +3,8 @@ import express from "express";
 import { addTask } from "../controllers/task.js";
 const router = express.Router();
 
-router.post("/newtask", addTask);
-router.get("/newtask", (req, res) => {
+router.post("/task", addTask);
+router.get("/task", (req, res) => {
   res.send("ssdasd");
 });
 

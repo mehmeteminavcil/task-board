@@ -1,29 +1,11 @@
 import Task from "../models/taskModel.js";
 
-export const addTask = (req, res, next) => {
-  const task = new Task({
-    title: req.body.title,
-    description: req.body.description,
-    priority: req.body.priority || 1,
-    dueDate: req.body.dueDate,
-    completed: req.body.completed || false,
-    contributors: req.body.contributors || [],
-    creator: req.body.creator,
-  });
-
-  task
-    .save()
-    .then((result) => {
-      console.log(result);
-      res.status(201).json({
-        message: "Task created successfully!",
-        task: result,
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json({
-        error: err,
-      });
-    });
+export const addTask = async (req, res) => {
+  const newTask = new Task(req.body);
+  try {
+    const savedTask = await newTask.save();
+    res.status(200).json(savedTask);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 };
