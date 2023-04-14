@@ -4,6 +4,7 @@ import connectDB from "./db.js";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js";
 import taskRoutes from "./routes/task.js";
+import cors from "cors";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -18,11 +19,12 @@ app.get("/", (req, res) => {
 connectDB();
 
 // Middleware
+app.use(cors());
 app.use(express.json());
 app.use(helmet());
 
 // Routes
-app.use("/", taskRoutes);
+app.use("/api/tasks", taskRoutes);
 app.use("/api/auth", authRoutes);
 
 // Error handling middleware

@@ -1,17 +1,11 @@
 import Navbar from "../../components/Navbar/Navbar";
-import Section from "../../components/Section/Section";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import Task from "../../components/Task/Task";
-
-import "./home.scss";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
+import "./home.scss";
 
-import { boards, tasks } from "../../data";
+import Board from "../../components/Board/Board";
 
 const Home = () => {
-  function newTask() {
-    console.log("calisti");
-  }
   return (
     <div className="home">
       <Sidebar />
@@ -26,27 +20,7 @@ const Home = () => {
         </div>
 
         <div className="homeMain">
-          {boards.map((board) => (
-            <Section
-              handleClick={() => newTask()}
-              key={board.id}
-              title={board.title}
-              children={tasks.map((task) => {
-                if (board.status === task.status) {
-                  return (
-                    <Task
-                      key={task.id}
-                      category={task.category}
-                      title={task.title}
-                      text={task.text}
-                      helper={task.helper}
-                      color={task.color}
-                    />
-                  );
-                }
-              })}
-            />
-          ))}
+          <Board />
         </div>
       </div>
     </div>
