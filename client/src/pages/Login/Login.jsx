@@ -3,6 +3,7 @@ import "./login.scss";
 import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import CircularProgress from "@mui/material/CircularProgress";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const email = useRef();
@@ -47,7 +48,11 @@ const Login = () => {
             )}
           </button>
           <span className="loginForgot">Forgot Password?</span>
-          <button className="loginRegisterButton">Create a New Account</button>
+          <Link to="/register" style={{ textDecoration: "none" }}>
+            <button type="button" className="loginRegisterButton">
+              Create a New Account
+            </button>
+          </Link>
         </form>
       </div>
     </div>

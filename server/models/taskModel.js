@@ -8,7 +8,6 @@ const taskSchema = new mongoose.Schema(
     },
     category: {
       type: String,
-      enum: ["DESIGN SYSTEM", "DEVELOPMENT", "TYPOGRAPHY"],
     },
     title: {
       type: String,
@@ -22,6 +21,9 @@ const taskSchema = new mongoose.Schema(
       type: String,
       enum: ["todo", "inprogress", "done"],
       default: "todo",
+    },
+    color: {
+      type: String,
     },
     contributors: [
       {
