@@ -23,42 +23,32 @@ const Login = () => {
   return (
     <div className="login">
       <div className="loginWrapper">
-        <div className="loginLeft">
-          <h3 className="loginLogo">Lamasocial</h3>
-          <span className="loginDesc">
-            Connect with friends and the world around you on Lamasocial.
-          </span>
-        </div>
-        <div className="loginRight">
-          <form className="loginBox" onSubmit={handleClick}>
-            <input
-              placeholder="Email"
-              type="email"
-              required
-              className="loginInput"
-              ref={email}
-            />
-            <input
-              placeholder="Password"
-              type="text"
-              required
-              minLength="6"
-              className="loginInput"
-              ref={password}
-            />
-            <button className="loginButton" type="submit">
-              {isFetching ? (
-                <CircularProgress color="inherit" size="20px" />
-              ) : (
-                "Login"
-              )}
-            </button>
-            <span className="loginForgot">Forgot Password?</span>
-            <button className="loginRegisterButton">
-              Create a New Account
-            </button>
-          </form>
-        </div>
+        <form className="loginBox" onSubmit={handleClick}>
+          <input
+            placeholder="Email"
+            type="email"
+            required
+            className="loginInput"
+            ref={email}
+          />
+          <input
+            placeholder="Password"
+            type="text"
+            required
+            minLength="6"
+            className="loginInput"
+            ref={password}
+          />
+          <button className="loginButton" type="submit">
+            {isFetching ? (
+              <CircularProgress color="inherit" size="20px" />
+            ) : (
+              "Login"
+            )}
+          </button>
+          <span className="loginForgot">Forgot Password?</span>
+          <button className="loginRegisterButton">Create a New Account</button>
+        </form>
       </div>
     </div>
   );

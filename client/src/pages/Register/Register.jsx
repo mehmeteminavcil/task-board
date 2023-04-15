@@ -34,53 +34,45 @@ const Register = () => {
   };
 
   return (
-    <div className="Register">
+    <div className="register">
       <div className="registerWrapper">
-        <div className="registerLeft">
-          <h3 className="registerLogo">Lamasocial</h3>
-          <span className="registerDesc">
-            Connect with friends and the world around you on Lamasocial.
-          </span>
-        </div>
-        <div className="registerRight">
-          <form className="registerBox" onSubmit={handleClick}>
-            <input
-              placeholder="Username"
-              type="text"
-              required
-              className="registerInput"
-              ref={username}
-            />
-            <input
-              placeholder="Email"
-              type="email"
-              required
-              className="registerInput"
-              ref={email}
-            />
-            <input
-              placeholder="Password"
-              type="password"
-              required
-              minLength="6"
-              className="registerInput"
-              ref={password}
-            />
-            <input
-              placeholder="Password Again"
-              type="password"
-              required
-              minLength="6"
-              className="registerInput"
-              ref={passwordAgain}
-            />
-            <button className="registerButton" type="submit">
-              Sign Up
-            </button>
-            <span className="registerForgot">Forgot Password?</span>
-            <button className="registerRegisterButton">Log into Account</button>
-          </form>
-        </div>
+        <form className="registerBox" onSubmit={handleClick}>
+          <input
+            placeholder="Username"
+            type="text"
+            required
+            className="registerInput"
+            ref={username}
+          />
+          <input
+            placeholder="Email"
+            type="email"
+            required
+            className="registerInput"
+            ref={email}
+          />
+          <input
+            placeholder="Password"
+            type="password"
+            required
+            minLength="6"
+            className="registerInput"
+            ref={password}
+          />
+          <input
+            placeholder="Password Again"
+            type="password"
+            required
+            minLength="6"
+            className="registerInput"
+            ref={passwordAgain}
+          />
+          <button className="registerButton" type="submit">
+            Sign Up
+          </button>
+          <span className="registerForgot">Forgot Password?</span>
+          <button className="registerRegisterButton">Log into Account</button>
+        </form>
       </div>
     </div>
   );
