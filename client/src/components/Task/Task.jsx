@@ -1,19 +1,36 @@
 import { useState } from "react";
-import TaskMenu from "../TaskMenu/TaskMenu";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+
 import "./task.scss";
 import MoreHorizRoundedIcon from "@mui/icons-material/MoreHorizRounded";
+import axios from "axios";
 
-const Task = ({ category, title, text, helper, color }) => {
+const Task = ({ category, deleteTask, title, text, helper, color }) => {
   const [showMenu, setShowMenu] = useState(true);
 
   const handleButtonClick = () => {
     setShowMenu(!showMenu);
   };
+  const editTask = () => {
+    console.log("edit task here");
+  };
 
   return (
     <div className="task">
       <div style={{ display: showMenu ? "none" : "block" }}>
-        <TaskMenu />
+        <div className="taskMenu">
+          <ul>
+            <li onClick={editTask}>
+              <EditOutlinedIcon className="icon" />
+              <span> edit</span>
+            </li>
+            <li onClick={deleteTask}>
+              <DeleteOutlineOutlinedIcon className="icon" />
+              <span> delete</span>
+            </li>
+          </ul>
+        </div>
       </div>
       <div className="top">
         <div className="category">

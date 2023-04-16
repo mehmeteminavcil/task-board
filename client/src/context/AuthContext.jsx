@@ -4,9 +4,10 @@ import AuthReducer from "./AuthReducer";
 
 const INITAL_STATE = {
   user: {
-    _id: "6437a24a09f6f684ef43539d",
-    username: "emin",
-    email: "emin@gmail.comm",
+    _id: "6437a3c6c9485a1e891b1811",
+
+    username: "jack",
+    email: "jack@gmail.comm",
     password: "$2b$10$3nGWsJ2OLCM7ln4644mM5uXb7Pmj0aFiTiC35EMTFy48qWLwEm40a",
     profilePicture: "",
     coverPicture: "",
