@@ -3,7 +3,7 @@ import "./addTask.scss";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 
-const AddTask = ({ handleToggleClick, fetchTask }) => {
+const AddTask = ({ handleToggleClick }) => {
   const category = useRef();
   const title = useRef();
   const description = useRef();
@@ -20,7 +20,7 @@ const AddTask = ({ handleToggleClick, fetchTask }) => {
     };
     try {
       await axios.post("http://localhost:5000/api/tasks/", task);
-      window.location.reload();
+      handleToggleClick();
     } catch (err) {
       console.log(err);
     }

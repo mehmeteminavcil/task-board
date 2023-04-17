@@ -7,11 +7,13 @@ const UpdateTask = ({
   color,
   handleToggleClick,
   handleFormChange,
+  handleUpdateSubmit,
+  state,
 }) => {
   return (
     <div className="updateForm">
       <div className="updateContainer">
-        <form>
+        <form onSubmit={handleUpdateSubmit}>
           <ul>
             <li>
               <label htmlFor="category">Category :</label>
@@ -42,6 +44,26 @@ const UpdateTask = ({
                 name="description"
                 onChange={handleFormChange}
               ></textarea>
+            </li>
+            <li>
+              <label htmlFor="state">state :</label>
+              <input
+                value={state}
+                id="state"
+                type="text"
+                name="state"
+                onChange={handleFormChange}
+              />
+            </li>
+            <li>
+              <label htmlFor="color">color :</label>
+              <input
+                value={color}
+                id="color"
+                type="text"
+                name="color"
+                onChange={handleFormChange}
+              />
             </li>
           </ul>
           <button type="sumbit">Update Task</button>
