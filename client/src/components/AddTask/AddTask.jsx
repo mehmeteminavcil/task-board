@@ -3,7 +3,7 @@ import "./addTask.scss";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 
-const AddTask = ({ handleToggleClick }) => {
+const AddTask = ({ handleToggleClick, fetchTask }) => {
   const category = useRef();
   const title = useRef();
   const description = useRef();
