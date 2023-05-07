@@ -8,6 +8,7 @@ const UpdateTask = ({
   handleToggleClick,
   handleFormChange,
   handleUpdateSubmit,
+  handleColorChange,
   state,
 }) => {
   return (
@@ -57,13 +58,39 @@ const UpdateTask = ({
             </li>
             <li>
               <label htmlFor="color">color :</label>
-              <input
-                value={color}
-                id="color"
-                type="text"
-                name="color"
-                onChange={handleFormChange}
-              />
+            </li>
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  name="color"
+                  value="red"
+                  onChange={handleColorChange}
+                />
+                Red
+              </label>
+            </li>
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  name="color"
+                  value="green"
+                  onChange={handleColorChange}
+                />
+                Green
+              </label>
+            </li>
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  name="color"
+                  value="blue"
+                  onChange={handleColorChange}
+                />
+                Blue
+              </label>
             </li>
           </ul>
           <button type="sumbit">Update Task</button>

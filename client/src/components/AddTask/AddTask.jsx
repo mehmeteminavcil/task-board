@@ -1,26 +1,33 @@
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import "./addTask.scss";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 
 const AddTask = ({ handleToggleClick }) => {
-  const category = useRef();
-  const title = useRef();
-  const description = useRef();
+  const categoryRef = useRef(null);
+  const titleRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const [selectedColor, setSelectedColor] = useState("");
 
   const { user } = useContext(AuthContext);
+
+  const handleColorChange = (event) => {
+    setSelectedColor(event.target.value);
+  };
 
   const handleClick = async (e) => {
     e.preventDefault();
     const task = {
       userId: user._id,
-      category: category.current.value,
-      title: title.current.value,
-      description: description.current.value,
+      category: categoryRef.current.value,
+      title: titleRef.current.value,
+      description: descriptionRef.current.value,
+      color: selectedColor,
     };
     try {
       await axios.post("http://localhost:5000/api/tasks/", task);
       handleToggleClick();
+      window.location.reload();
     } catch (err) {
       console.log(err);
     }
@@ -33,23 +40,72 @@ const AddTask = ({ handleToggleClick }) => {
           <ul>
             <li>
               <label htmlFor="category">Category :</label>
-              <input ref={category} id="category" type="text" name="category" />
+              <input
+                ref={categoryRef}
+                id="category"
+                type="text"
+                name="category"
+                required
+              />
             </li>
             <li>
               <label htmlFor="title">Title :</label>
-              <input ref={title} id="title" type="text" name="title" />
+              <input
+                ref={titleRef}
+                id="title"
+                type="text"
+                name="title"
+                required
+              />
             </li>
 
             <li>
               <label htmlFor="description">Description</label>
               <textarea
-                ref={description}
+                ref={descriptionRef}
                 id="description"
                 name="description"
+                required
               ></textarea>
             </li>
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  name="color"
+                  value="red"
+                  onChange={handleColorChange}
+                  required
+                />
+                Red
+              </label>
+            </li>
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  name="color"
+                  value="green"
+                  onChange={handleColorChange}
+                  required
+                />
+                Green
+              </label>
+            </li>
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  name="color"
+                  value="blue"
+                  onChange={handleColorChange}
+                  required
+                />
+                Blue
+              </label>
+            </li>
           </ul>
-          <button type="sumbit">Add Task</button>
+          <button type="submit">Add Task</button>
         </form>
       </div>
 

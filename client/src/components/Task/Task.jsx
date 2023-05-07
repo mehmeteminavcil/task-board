@@ -124,6 +124,7 @@ const Task = ({ data }) => {
           handleToggleClick={handleEditTaskToggle}
           handleFormChange={handleFormChange}
           handleUpdateSubmit={handleUpdateSubmit}
+          handleColorChange={handleFormChange}
         />
       </div>
     </div>
